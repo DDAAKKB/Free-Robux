@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roblox Robux Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f0f0;
+    }
+    .button-container {
+      margin-bottom: 20px;
+    }
+    .robux-button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin: 10px;
+      border-radius: 5px;
+      transition: transform 0.2s, background-color 0.3s;
+    }
+    .robux-button:hover {
+      background-color: #45a049;
+      transform: scale(1.1);
+    }
+    .selected {
+      background-color: #FFD700;
+      transform: scale(1.1);
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 300px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Robux generator</h1>
+  
+  <p>Select your desired Robux amount:</p>
+  <div class="button-container">
+    <button class="robux-button" onclick="selectRobux(10, this)">10 Robux</button>
+    <button class="robux-button" onclick="selectRobux(1000, this)">1,000 Robux</button>
+    <button class="robux-button" onclick="selectRobux(10000, this)">10,000 Robux</button>
+    <button class="robux-button" onclick="selectRobux(69000, this)">69,000 Robux</button>
+  </div>
+  
+  <p>Enter your Roblox username:</p>
+  <input type="text" id="username" placeholder="Enter Roblox username">
+  <br><br>
+  
+  <button onclick="getRobux()">Get Robux</button>
+
+  <script>
+    let robuxAmount = 0; // Store selected Robux value
+
+    function selectRobux(amount, button) {
+      // Set the selected Robux amount
+      robuxAmount = amount;
+
+      // Change button color to indicate selection
+      const buttons = document.querySelectorAll(".robux-button");
+      buttons.forEach(btn => {
+        btn.classList.remove("selected"); // Remove "selected" class from all buttons
+      });
+      
+      button.classList.add("selected"); // Add "selected" class to the clicked button
+    }
+
+    function getRobux() {
+      let username = document.getElementById("username").value;
+      if (robuxAmount > 0 && username) {
+        // Redirect to Rickroll video (YouTube link)
+        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+      } else {
+        alert("Please select Robux amount and enter a username.");
+      }
+    }
+  </script>
+</body>
+</html>
+
